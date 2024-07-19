@@ -54,10 +54,10 @@
 .post-toc {
   position: fixed;
   top: calc(32px + 63px); /* top value = (navbar>container).height + (.post-wrap).padding-top */
-  /* right: 2em; */
+  right: 2em;
   width: var(--post-toc-width);
   font-size: var(--font-size-12);
-  right: 20px; /* Fixed distance to the right border */
+  right: 0px; /* Fixed distance to the right border */
 }
 
 .post-toc .tocbot-list {
