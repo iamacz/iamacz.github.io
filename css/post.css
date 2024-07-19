@@ -4,15 +4,19 @@ body {
 
 .post {
   /* margin: 128px 0; */
-  margin-left: 100px; /* Closer to the left border */
-  margin-right: 156px; /* Farther from the right border */
+  margin-left: 0px; /* Closer to the left border */
+  margin-right: 0px; /* Farther from the right border */
+  margin-top: 128px; /* Top margin */
+  margin-bottom: 128px; /* Bottom margin */
 }
 
 /* Example of adding responsive adjustments */
 @media screen and (max-width: 800px) {
   .post {
-    margin-left: 10px; /* Adjust margins for smaller screens if needed */
-    margin-right: 10px;
+    margin-left: 0px; /* Adjust margins for smaller screens if needed */
+    margin-right: 0px;
+    margin-top: 128px; /* Top margin */
+    margin-bottom: 128px; /* Bottom margin */
   }
 }
 
