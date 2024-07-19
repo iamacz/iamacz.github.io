@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>Search - Tangbin Chen</title>
+  <title>My first post! - Tangbin Chen</title>
   
     <link rel="shortcut icon" href="/MyBlogIcon-bgrm.png">
   
@@ -16,13 +16,17 @@
   
   
   
-  <meta property="og:title" content="Search - Tangbin Chen" />
+  <meta property="og:title" content="My first post! - Tangbin Chen" />
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   
-  <meta property="og:url" content="http://example.com/search/index.html" />
+  <meta property="og:url" content="http://example.com/2024/07/19/My-first-post/index.html" />
   
   <meta property="og:image" content="/ME.png" />
+  
+  <meta property="og:article:published_time" content="2024-07-19T12:40:19.000Z" />
+  
+  <meta property="og:article:author" content="Tangbin" />
   
   
 
@@ -68,14 +72,6 @@
   
   
   
-<link rel="stylesheet" href="/css/archive.css">
-
-  
-  
-  
-<link rel="stylesheet" href="/css/search.css">
-
-  
   
   
 
@@ -104,8 +100,6 @@
         
         data-config-root="/"
         
-        
-        data-search-path="search.json"
         
     >
         <nav id="theme-nav">
@@ -143,17 +137,149 @@
     </div>
 </nav>
         
-    <div class="container">
+<article class="post">
     <div class="meta">
-        <h2 class="title">
-            Search
-        </h2>
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/bibilailai/">bibilailai</a>
+        
+            <a href="/categories/bibilailai/lala/">lala</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>July</span>
+            <span>19,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">My first post!</h1>
     </div>
-    <form id="search-form">
-        <input type="text" id="searchbox" placeholder="Type to search...">
-    </form>
-    <div class="post-list archives" id="search-results"></div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="This-is-the-h1-title"><a href="#This-is-the-h1-title" class="headerlink" title="This is the h1 title"></a>This is the h1 title</h1><p>very good! very good!</p>
+<h2 id="This-is-the-h2-title"><a href="#This-is-the-h2-title" class="headerlink" title="This is the h2 title"></a>This is the h2 title</h2><p>This is body under h2</p>
+<h3 id="Deluc"><a href="#Deluc" class="headerlink" title="Deluc"></a>Deluc</h3><h3 id="Jean"><a href="#Jean" class="headerlink" title="Jean"></a>Jean</h3><h3 id="Lopez"><a href="#Lopez" class="headerlink" title="Lopez"></a>Lopez</h3><h1 id="This-is-another-h1"><a href="#This-is-another-h1" class="headerlink" title="This is another h1"></a>This is another h1</h1><p>lalala</p>
+<h2 id="This-is-another-h2"><a href="#This-is-another-h2" class="headerlink" title="This is another h2"></a>This is another h2</h2><h3 id="xiao"><a href="#xiao" class="headerlink" title="xiao"></a>xiao</h3><h3 id="wanderer"><a href="#wanderer" class="headerlink" title="wanderer"></a>wanderer</h3>
+    </div>
+    
+    <!-- fom chic test  -->
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    // document.ready(function() {
+    //     tocbot.init(obj_merge(tocbot_default_config, {
+    //         collapseDepth: 1
+    //     }));
+    // });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            tocbot.init(obj_merge(tocbot_default_config, {
+                collapseDepth: 1
+            }));
+        });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+    <!-- from chic -->
+     
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Tangbin, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/life/" class="tag">#life</a><a href="/tags/test/" class="tag">#test</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="/2024/07/18/hello-world/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">Hello World</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+        
+        
+    
+</article>
 
         <footer>
     <div class="inner">
@@ -229,10 +355,6 @@
 
         
 <script src="/js/main.js"></script>
-
-        
-        
-<script src="/js/search.js"></script>
 
         
         
