@@ -9,11 +9,12 @@ body {
 }
 
 /* Example of adding responsive adjustments */
-/* @media screen and (max-width: 1050px) {
+@media screen and (max-width: 800px) {
   .post {
-    margin: 128px 0;
+    margin-left: 10px; /* Adjust margins for smaller screens if needed */
+    margin-right: 10px;
   }
-} */
+}
 
 
 /* hide toc when screen is small 1279px */
