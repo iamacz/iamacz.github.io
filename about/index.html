@@ -7,7 +7,7 @@
   
   <title>about - Tangbin Chen</title>
   
-    <link rel="shortcut icon" href="/MyBlogIcon-bgrm.png">
+    <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
   
   
     <link rel='manifest' href='/manifest.json'>
@@ -22,7 +22,7 @@
   
   <meta property="og:url" content="http://example.com/about/index.html" />
   
-  <meta property="og:image" content="/ME.png" />
+  <meta property="og:image" content="/img/self-portrait.jpg" />
   
   
 
@@ -151,11 +151,88 @@
     <div class="divider"></div>
 
     <div class="content">
-        
+        <h1 id="Tangbin"><a href="#Tangbin" class="headerlink" title="Tangbin?"></a>Tangbin?</h1><p>Hello! This is Tangbin Chen. I sometimes also go by Arron (a name I like but is not used much lately). </p>
+<p>![[By the black sea.jpg]]</p>
+<p>I was an engineering student who had always been interested in social questions. Very luckily, I got admitted to a master program in Computational Social Science at Linköping University where I met a lot on interesting people and received my desired training. </p>
+<p>After my graduation in 2022, I decided to continue studying as a doctoral student and worked at the Institute for Analytical Sociology at Linköping University for another year. After that, I was offered a PhD position at Karolinska Institutet to do social epidemiological research. I am very looking forward to my coming journey~</p>
+<p>My main interest is in social influence and network study. My doctoral research will focus on health-related behaviors, especially their diffusion through social networks and network-based intervention.</p>
+<h1 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies?"></a>Hobbies?</h1><p>Every time being asked about my hobbies, I will be at a loss for a while. It is really hard to summarize what are my hobbies. I like music, movies…….</p>
+
     </div>
     
     <!-- fom chic test  -->
     
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    // document.ready(function() {
+    //     tocbot.init(obj_merge(tocbot_default_config, {
+    //         collapseDepth: 1
+    //     }));
+    // });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            tocbot.init(obj_merge(tocbot_default_config, {
+                collapseDepth: 1
+            }));
+        });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
     
     <!-- from chic -->
      
