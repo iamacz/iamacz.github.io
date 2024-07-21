@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>Hello World - Tangbin Chen</title>
+  <title>Category: diary - Tangbin Chen</title>
   
     <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
   
@@ -16,17 +16,13 @@
   
   
   
-  <meta property="og:title" content="Hello World - Tangbin Chen" />
+  <meta property="og:title" content="Category: diary - Tangbin Chen" />
   
-  <meta property="og:type" content="article" />
+  <meta property="og:type" content="website" />
   
-  <meta property="og:url" content="http://example.com/2024/07/18/hello-world/index.html" />
+  <meta property="og:url" content="http://example.com/categories/diary/index.html" />
   
   <meta property="og:image" content="/img/self-portrait.jpg" />
-  
-  <meta property="og:article:published_time" content="2024-07-18T09:20:54.841Z" />
-  
-  <meta property="og:article:author" content="Tangbin" />
   
   
 
@@ -72,6 +68,10 @@
   
   
   
+<link rel="stylesheet" href="/css/archive.css">
+
+  
+  
   
   
 
@@ -88,7 +88,11 @@
 
 
   
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
     <body
         data-color-scheme="light/dark/auto"
         data-uppercase-categories="true"
@@ -136,147 +140,48 @@
         </div>
     </div>
 </nav>
-        
-<article class="post">
+        <div class="container">
     <div class="meta">
-        
-
-        
-        <div class="date" id="date">
-            <span>July</span>
-            <span>18,</span>
-            <span>2024</span>
+        <div class="type">
+            Category
+            
         </div>
-        
 
-        <h1 class="title">Hello World</h1>
+        <h2 class="title">diary</h2>
     </div>
 
     <div class="divider"></div>
 
-    <div class="content">
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-    </div>
-    
-    <!-- fom chic test  -->
-    
-    
-        <div class="post-toc">
-    <div class="tocbot-list">
-    </div>
-    <div class="tocbot-list-menu">
-        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
-        <a onclick="go_top()">Back to top</a>
-        <a onclick="go_bottom()">Go to bottom</a>
-    </div>
-</div>
-
-<script>
-    var tocbot_timer;
-    var DEPTH_MAX = 6; // 为 6 时展开所有
-    var tocbot_default_config = {
-        tocSelector: '.tocbot-list',
-        contentSelector: '.content',
-        headingSelector: 'h1, h2, h3, h4, h5',
-        orderedList: false,
-        scrollSmooth: true,
-        onClick: extend_click,
-    };
-
-    function extend_click() {
-        clearTimeout(tocbot_timer);
-        tocbot_timer = setTimeout(function() {
-            tocbot.refresh(obj_merge(tocbot_default_config, {
-                hasInnerContainers: true
-            }));
-        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
-    }
-
-    // document.ready(function() {
-    //     tocbot.init(obj_merge(tocbot_default_config, {
-    //         collapseDepth: 1
-    //     }));
-    // });
-
-    document.addEventListener('DOMContentLoaded', function() {
-            tocbot.init(obj_merge(tocbot_default_config, {
-                collapseDepth: 1
-            }));
-        });
-
-    function expand_toc() {
-        var b = document.querySelector('.tocbot-toc-expand');
-        var expanded = b.getAttribute('data-expanded');
-        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
-        tocbot.refresh(obj_merge(tocbot_default_config, {
-            collapseDepth: expanded ? 1 : DEPTH_MAX
-        }));
-        b.innerText = expanded ? 'Expand all' : 'Collapse all';
-    }
-
-    function go_top() {
-        window.scrollTo(0, 0);
-    }
-
-    function go_bottom() {
-        window.scrollTo(0, document.body.scrollHeight);
-    }
-
-    function obj_merge(target, source) {
-        for (var item in source) {
-            if (source.hasOwnProperty(item)) {
-                target[item] = source[item];
-            }
-        }
-        return target;
-    }
-</script>
-    
-    <!-- from chic -->
-     
-    
-    <div class="about">
-        <h1>About this Post</h1>
-        <div class="details">
-            <p>This post is written by Tangbin, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
-        </div>
+    <div class="post-list archives">
         
-    </div>
-    
-
-    <div class="container post-prev-next">
-        
-        <a href="/2024/07/19/My-first-post/" class="next">
-            <div>
-                <div class="text">
-                    <p class="label">Next</p>
-                    <h3 class="title">My first post!</h3>
+        <article class="post-list-item">
+            <a href="/2024/07/19/Diary/Test%20diary/">
+                
+                <div class="cover-img">
+                    <img src="/img/MoonAndTree.jpg" alt="Leaves and the moon">
                 </div>
-            </div>
-        </a>
+                
+                <div class="content">
+                    
+                    <div class="title">
+                        Test diary
+                    </div>
+                    
+                    
+                    <div class="time">
+                        <span>July</span>
+                        <span>&nbsp;19,&nbsp;</span>
+                        <span>2024</span>
+                    </div>
+                    
+                </div>
+            </a>
+        </article>
         
-        <a class="prev"></a>
     </div>
 
     
-        
-        
-    
-</article>
-
+</div>
         <footer>
     <div class="inner">
         <div class="links">
@@ -301,7 +206,7 @@
                 
                 <a href="/about" class="item">About</a>
                 
-                <a href="/resume" class="item">Resume</a>
+                <a href="/attachment/CHEN Tangbin_CV.pdf" class="item">Resume</a>
                 
                 <a href="/projects" class="item">Projects</a>
                 
