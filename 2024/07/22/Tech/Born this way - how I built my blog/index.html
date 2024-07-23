@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head prefix="og: https://ogp.me/ns#">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  
+  <title>Born this way - how I built my blog - Tangbin Chen</title>
+  
+    <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
+  
+  
+    <link rel='manifest' href='/manifest.json'>
+  
+
+  
+  
+  
+  <meta property="og:title" content="Born this way - how I built my blog - Tangbin Chen" />
+  
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:url" content="http://example.com/2024/07/22/Tech/Born%20this%20way%20-%20how%20I%20built%20my%20blog/index.html" />
+  
+  <meta property="og:image" content="img/blog.png" />
+  
+  <meta property="og:article:published_time" content="2024-07-22T08:51:27.000Z" />
+  
+  <meta property="og:article:author" content="Tangbin" />
+  
+  
+
+  
+<link rel="stylesheet" href="/css/var.css">
+
+  
+<link rel="stylesheet" href="/css/main.css">
+
+  
+<link rel="stylesheet" href="/css/typography.css">
+
+  
+<link rel="stylesheet" href="/css/code-highlighting.css">
+
+  
+<link rel="stylesheet" href="/css/components.css">
+
+  
+<link rel="stylesheet" href="/css/nav.css">
+
+  
+<link rel="stylesheet" href="/css/paginator.css">
+
+  
+<link rel="stylesheet" href="/css/footer.css">
+
+  
+<link rel="stylesheet" href="/css/post-list.css">
+
+  
+  
+<link rel="stylesheet" href="/css/rainbow-banner.css">
+
+  
+  
+  
+    
+<link rel="stylesheet" href="/css/giscus.css">
+
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/post.css">
+
+  
+  
+  
+  
+  
+
+  <!-- to add icons from iconfont -->
+  <link rel="stylesheet" href="/fonts/iconfont/iconfont.css"> <!-- Ensure this path is correct -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+  <link rel="stylesheet" href="/css/index.css"> <!-- Your CSS file -->
+
+  <!-- to import css sinpet -->
+  <link rel="stylesheet" href="/css/tocbot.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css" /> -->
+  <link rel="stylesheet" href="/css/toc.css"> <!-- Your CSS file -->
+  <script src="/js/tocbot.min.js"></script>
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const bodyElement = document.querySelector('body');
+
+        // Function to update the giscus theme
+        const updateGiscusTheme = (theme) => {
+            const iframe = document.querySelector('iframe.giscus-frame');
+            if (iframe) {
+                iframe.contentWindow.postMessage({
+                    giscus: {
+                        setConfig: {
+                            theme: theme
+                        }
+                    }
+                }, 'https://giscus.app');
+            }
+        };
+
+        // Initial update of giscus theme based on the current data-current-color-scheme
+        const initialTheme = bodyElement.getAttribute('data-current-color-scheme');
+        updateGiscusTheme(initialTheme);
+
+        // MutationObserver to monitor changes to the data-current-color-scheme attribute
+        const observer = new MutationObserver((mutationsList) => {
+            for (let mutation of mutationsList) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-current-color-scheme') {
+                    const newTheme = bodyElement.getAttribute('data-current-color-scheme');
+                    updateGiscusTheme(newTheme);
+                }
+            }
+        });
+
+        // Observe changes to attributes of the body element
+        observer.observe(bodyElement, { attributes: true });
+
+        });
+  </script> 
+    
+
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+    <body
+        data-color-scheme="light/dark/auto"
+        data-uppercase-categories="true"
+        
+        data-rainbow-banner="true"
+        data-rainbow-banner-shown="auto"
+        data-rainbow-banner-month="6"
+        data-rainbow-banner-colors="#e50000,#ff8d00,#ffee00,#008121,#004cff,#760188"
+        
+        data-config-root="/"
+        
+        
+    >
+        <nav id="theme-nav">
+    <div class="inner">
+        <a class="title" href="/">Tangbin&#39;s Blog</a>
+        <div class="nav-arrow"></div>
+        <div class="nav-items">
+            <a class="nav-item nav-item-home" href="/">Home</a>
+            
+            
+            <a class="nav-item" href="/archives">Archives</a>
+            
+            
+            
+            <a class="nav-item" href="/tags">Tags</a>
+            
+            
+            
+            <a class="nav-item" href="/categories">Categories</a>
+            
+            
+            
+            <a class="nav-item" href="/projects">Projects</a>
+            
+            
+            
+            <a class="nav-item" href="/about">About</a>
+            
+            
+            
+            <a class="nav-item nav-item-search nav-item-icon" href="/search" target="_blank" aria-label="Search">&nbsp;</a>
+            
+            
+        </div>
+    </div>
+</nav>
+        
+<article class="post">
+    <div class="meta">
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/tech/">tech</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>July</span>
+            <span>22,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">Born this way - how I built my blog</h1>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <blockquote>
+<p>“Born this way” was one of the first titles that came to my mind for this post. I really like the humor here which lies in the dual meaning of the phrase: 1) it indicates the attitude to embrace our inherent nature, and 2) it can be understood (maybe not for the native speakers) as born (in) this way - illustration of how something is born. </p>
+<p>(Isn’t it some sort of a humor to explain the humor?😮‍💨)</p>
+</blockquote>
+<p>Below I will write down how I built my blog.</p>
+<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><p>I built my blog following the tutorial of <a target="_blank" rel="noopener" href="https://github.com/DID321">@DID321 (Di Wang)</a>, you can find <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Eg41157tL/?spm_id_from=333.976.top_right_bar_window_default_collection.content.click&amp;vd_source=080edb132758201384a3cfe0f3f7e143">his excellent tutorial here on bilibili</a>, note that the tutorial is in Chinese. Many thanks for his sharing~</p>
+<h2 id="Install-Git-and-NodeJS"><a href="#Install-Git-and-NodeJS" class="headerlink" title="Install Git and NodeJS"></a>Install Git and NodeJS</h2><h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p><a target="_blank" rel="noopener" href="https://git-scm.com/downloads">Download Git here</a> and install it. When it is done, you can find git options if you right click on any folder.<br><img src="/img/GitMenu.png" alt=""></p>
+<h3 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h3><p><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/prebuilt-installer">Download Node.js here</a> and install. You can check if the installation is successful using the commands below in Git Bash. To open the git bash, you can either right click on any folder or find Git Bash in your Start menu if you are using Windows.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+<p><img src="/img/check_install_nodejs.png" alt=""></p>
+<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><p>You can find the <a target="_blank" rel="noopener" href="https://hexo.io/docs/index.html">documentation of Hexo here</a>. If you did not quit Git Bash after checking the installation, just keep typing the following code, otherwise, you need to open git bash again 👉👈</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+<p>I ran into one problem here (seemingly failed to connect), so I used the mirror site from aliyun, more details 👉 <a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/NPM?spm=a2c6h.13651102.0.0.30da1b11rnOOiS">NPM镜像_NPM下载地址</a><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># change to mirror site</span><br><span class="line">npm config set registry https://registry.npmmirror.com</span><br><span class="line"># install hexo</span><br><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
+<h2 id="Initialize-your-blog"><a href="#Initialize-your-blog" class="headerlink" title="Initialize your blog"></a>Initialize your blog</h2><p>After installation of hexo, you need to create a new folder or use your existing folder as your blog folder. Right click on the selected folder, and choose git bash~ After execute the commands below, hexo is going to prepare all files needed for a hexo blog in the selected folder.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;folder name of your blog&gt;</span><br><span class="line">cd &lt;folder name of your blog&gt;</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="Select-a-theme-optional"><a href="#Select-a-theme-optional" class="headerlink" title="Select a theme (optional)"></a>Select a theme (optional)</h2><p>You can find many many <a target="_blank" rel="noopener" href="https://hexo.io/themes/">Hexo themes here</a>. I chose the <a target="_blank" rel="noopener" href="https://github.com/MrWillCom/hexo-theme-cupertino">theme cupertino</a> and <a target="_blank" rel="noopener" href="https://github.com/Siricee/hexo-theme-Chic">theme chic</a>. Here I will show you how to configurate your cupertino theme.</p>
+<p>First, you need to go to the GitHub repository, and download the theme repository as zip. Unzip the file and put it in the <code>themes</code> folder under your root directory of your blog folder<code>.\themes</code>.</p>
+<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>There are two configuration file, both called <em>“ _config.yml”</em>, one is in the root directory of your blog <code>.\_config.yml</code>; another one is in the theme you download <code>.\themes\hexo-theme-cupertino-master\_config.yml</code>. Let’s call them <strong>site config</strong> and <strong>theme config</strong> correspondingly. </p>
+<h3 id="site-config"><a href="#site-config" class="headerlink" title="site config"></a>site config</h3><p>To make sure the theme works properly, you need to open the <strong>site config</strong> and copy-paste the theme folder name there.<br><img src="/img/config_theme.png" alt=""></p>
+<p>Also, don’t forget to change some basic information of your blog.</p>
+<p><img src="/img/site_config.png" alt=""></p>
+<h3 id="Theme-config"><a href="#Theme-config" class="headerlink" title="Theme config"></a>Theme config</h3><p>You will not find a better guidance than the document by the author (<a target="_blank" rel="noopener" href="https://github.com/MrWillCom">@MrWillCom (Mr. Will)</a>) of this theme. You can find it here: <a target="_blank" rel="noopener" href="https://cupertino.mrwillcom.com/">Introduction – Hexo Theme Cupertino</a></p>
+<p>Here I am only about to address one thing that is sorta unclear in the documents.</p>
+<h4 id="Mathjax"><a href="#Mathjax" class="headerlink" title="Mathjax"></a>Mathjax</h4><p>I followed this tutorial to configure mathjax - <a target="_blank" rel="noopener" href="https://pku-zyf.github.io/formula/">Hexo渲染数学公式：配置方法与原理浅释</a>. </p>
+<p>As before, you need to run some commands in Git Bash. It is said that <em>kramed</em> is a better renderer, so, let’s uninstall the existing renderer and install this one!</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-renderer-marked --save</span><br><span class="line">npm install hexo-renderer-kramed --save</span><br></pre></td></tr></table></figure>
+<p>Now, in your <strong>theme config</strong>, add those lines:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: true</span><br><span class="line">  cdn: https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></table></figure>
+<p>Then, in your <strong>site config</strong>, add those below:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">math:</span><br><span class="line">  engine: &#x27;mathjax&#x27;</span><br><span class="line">  mathjax:</span><br><span class="line">    src: custom_mathjax_source</span><br></pre></td></tr></table></figure>
+<p>Next, we need to add a JavaScript snippet. The snippet will be part of the theme, so we go to the theme folder <code>.\themes\hexo-theme-cupertino-master</code>, there should be a <code>layout</code> sub-folder.  You can create a text file in the <code>layout</code> folder -&gt; copy paste the code below -&gt; save -&gt; rename the text file into “mathjax.ejs”.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.mathjax.enable)&#123; %&gt;</span><br><span class="line">    &lt;script type=&quot;text/x-mathjax-config&quot;&gt;</span><br><span class="line">      MathJax.Hub.Config(&#123;</span><br><span class="line">        tex2jax: &#123;</span><br><span class="line">          inlineMath: [ [&#x27;$&#x27;,&#x27;$&#x27;], [&quot;\\(&quot;,&quot;\\)&quot;] ],</span><br><span class="line">          processEscapes: true,</span><br><span class="line">          skipTags: [&#x27;script&#x27;, &#x27;noscript&#x27;, &#x27;style&#x27;, &#x27;textarea&#x27;, &#x27;pre&#x27;, &#x27;code&#x27;]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      MathJax.Hub.Queue(function() &#123;</span><br><span class="line">        var all = MathJax.Hub.getAllJax(), i;</span><br><span class="line">        for(i=0; i &lt; all.length; i += 1) &#123;</span><br><span class="line">            all[i].SourceElement().parentNode.className += &#x27; has-jax&#x27;;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;&lt;%- theme.mathjax.cdn %&gt;&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>Lastly, we need to add the following lines below to call the snippet above when needed. The code below need to be added to <code>post.ejs</code> in the same <code>layout</code> folder as abov.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (theme.mathjax)&#123; %&gt;</span><br><span class="line">  &lt;%- partial(&#x27;mathjax&#x27;) %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Cool, now you can enjoy writing in math~ But don’t forget to add <em>mathjax: true</em> in the YAML of your post when you need to use mathjax.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: blah blah</span><br><span class="line">date: 2021-01-01 00:00:00</span><br><span class="line">mathjax: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h1 id="GitHub-pages"><a href="#GitHub-pages" class="headerlink" title="GitHub pages"></a>GitHub pages</h1><p>Here is an intuitive instruction on <a target="_blank" rel="noopener" href="https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site">creating a GitHub Pages site</a></p>
+<h2 id="connect-to-GitHub"><a href="#connect-to-GitHub" class="headerlink" title="connect to GitHub"></a>connect to GitHub</h2><p>To use GitHub to host the blog, we need to connect to GitHub using the Secure Shell Protocol (SSH). Now we need to use Git Bash again, here is the code to generate your SSH:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;user name&quot;</span><br><span class="line">git config --global user.email &quot;email&quot;</span><br><span class="line">ssh-keygen -t rsa -C &#x27;the same email as above&#x27;</span><br></pre></td></tr></table></figure>
+<p>Three questions will be asked, note that when you enter the passphrase, nothing will be shown including *, don’t panic (I did🥲), just input the passphrase twice~<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Enter file in which to save the key (/c/Users/XXXX/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty for no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br></pre></td></tr></table></figure></p>
+<p>You can then see you SSH with the command below:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure></p>
+<p>Now you need to go back to GitHub, in the upper-right corner of any page on GitHub, click your profile photo, then click Settings. Then:</p>
+<ol>
+<li>In the “Access” section of the sidebar, click  <strong>SSH and GPG keys</strong>.</li>
+<li>Click <strong>New SSH key</strong> or <strong>Add SSH key</strong>.</li>
+<li>In the “Title” field, add a descriptive label for the new key. For example, if you’re using a personal laptop, you might call this key “Personal laptop”.</li>
+<li>Select the type of key - <strong>Authentication Key</strong>.</li>
+<li>In the “Key” field, paste your public key.</li>
+<li>Click <strong>Add SSH key</strong>.</li>
+</ol>
+<p>Here is the official instruction on how to add a new SSH - <a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account">Adding a new SSH key to your GitHub account - GitHub Docs</a></p>
+<p>Then you can test the connection (especially important if you are setting the connection for the first time) Use the command below in your git bash:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br><span class="line"># Attempts to ssh to GitHub</span><br></pre></td></tr></table></figure>
+<p>If you get an warning message like this:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; The authenticity of host &#x27;github.com (IP ADDRESS)&#x27; can&#x27;t be established.</span><br><span class="line">&gt; ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.</span><br><span class="line">&gt; Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure>
+<p>Then you need to verify that the fingerprint in the message you see matches <a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/githubs-ssh-key-fingerprints">GitHub’s public key fingerprint</a>. If it does, then type <code>yes</code>. You might be asked to provide the passphrase here, hope you remember it 😮‍💨 When you see the message below, then your connection is very successful~</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; Hi USERNAME! You&#x27;ve successfully authenticated, but GitHub does not</span><br><span class="line">&gt; provide shell access.</span><br></pre></td></tr></table></figure>
+<p>Lastly, we need to add more information in the <strong>site config</strong>:<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/iamacz/iamacz.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure></p>
+<h2 id="Deploy"><a href="#Deploy" class="headerlink" title="Deploy"></a>Deploy</h2><p>Almost there!!! Now you need to install a plugin to help you deply, again we go back to git bash:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>Phew, now you can deploy your blog to GitHub~</p>
+<p>Here are some useful command:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo g # Generates static files needed for your blog.</span><br><span class="line">hexo s # Starts a local server so that you can preview your blog.</span><br><span class="line">hexo d # deploy the blog to github</span><br></pre></td></tr></table></figure>
+<p>You can always refer to these docs on how to use Hexo - <a target="_blank" rel="noopener" href="https://hexo.io/docs/">Documentation | Hexo</a></p>
+<h2 id="Giscus"><a href="#Giscus" class="headerlink" title="Giscus"></a>Giscus</h2><p>You can use Giscus to allow visitors to leave a comment in your blog. You can read more here: <a target="_blank" rel="noopener" href="https://github.com/giscus/giscus">giscus: A comment system powered by GitHub Discussions</a>.</p>
+<p>I followed this tutorial to add giscus to my blog -&gt; <a target="_blank" rel="noopener" href="https://www.lixueduan.com/posts/blog/02-add-giscus-comment/">Hugo 博客引入 Giscus 评论系统</a></p>
+<h4 id="Install-Giscus"><a href="#Install-Giscus" class="headerlink" title="Install Giscus"></a>Install Giscus</h4><p>Go <a target="_blank" rel="noopener" href="https://github.com/apps/giscus">GitHub Apps - giscus</a>, click on the install, and select the blog repository on github. (Image from @lixd)</p>
+<p><img src="/img/install_giscus.png" alt="Image from @lixd"></p>
+<h4 id="Enable-discussion"><a href="#Enable-discussion" class="headerlink" title="Enable discussion"></a>Enable discussion</h4><p>See <a target="_blank" rel="noopener" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository">Enabling or disabling GitHub Discussions for a repository</a> for instruction on how to enable discussion for your blog repository.</p>
+<h4 id="Config-Giscus"><a href="#Config-Giscus" class="headerlink" title="Config Giscus"></a>Config Giscus</h4><p>Visit this site - <a target="_blank" rel="noopener" href="https://giscus.app/">giscus</a> - to configure your Giscus. One recommended configuration are shown as follow. You can of course explore more possibility~<br><img src="/img/Config_giscus.png" alt=""><img src="/img/Config_giscus2.png" alt=""></p>
+<h4 id="Enable-giscus"><a href="#Enable-giscus" class="headerlink" title="Enable giscus"></a>Enable giscus</h4><p>The script will be generated automatically after you adjust the configuration above. You can append the the script to the <strong>site config</strong> file. Remember to indicate that that the script is for giscus, see the code block below.</p>
+<p>![[Enable_gisgus.png]]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">giscus:</span><br><span class="line">  &lt;script src=&quot;https://giscus.app/client.js&quot;</span><br><span class="line">		  &lt;your configuration here&gt;</span><br><span class="line">  &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <!-- fom chic test  -->
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    // document.ready(function() {
+    //     tocbot.init(obj_merge(tocbot_default_config, {
+    //         collapseDepth: 1
+    //     }));
+    // });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            tocbot.init(obj_merge(tocbot_default_config, {
+                collapseDepth: 1
+            }));
+        });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+    <!-- from chic -->
+     
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Tangbin, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/tech/" class="tag">#tech</a><a href="/tags/record/" class="tag">#record</a><a href="/tags/experience/" class="tag">#experience</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        <a class="next"></a>
+        
+        <a href="/2024/07/19/Diary/Test%20diary/" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">Test diary</>
+                </div>
+            </div>
+        </a>
+        
+    </div>
+
+    
+</article>
+
+
+
+    
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+  
+  
+        <footer>
+    <div class="inner">
+        <div class="links">
+            
+            <div class="group">
+                <h2 class="title">Blog</h2>
+                
+                <a href="/" class="item">Blog</a>
+                
+                <a href="/archives" class="item">Archives</a>
+                
+                <a href="/tags" class="item">Tags</a>
+                
+                <a href="/categories" class="item">Categories</a>
+                
+                <a href="/search" class="item">Search</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">About me</h2>
+                
+                <a href="/about" class="item">About</a>
+                
+                <a href="/attachment/CHEN Tangbin_CV.pdf" class="item">Resume</a>
+                
+                <a href="/projects" class="item">Projects</a>
+                
+            </div>
+            
+            <div class="group">
+                <h2 class="title">Contact</h2>
+                
+                <a target="_blank" rel="noopener" href="https://github.com/iamacz" class="item">GitHub</a>
+                
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/2044881377" class="item">X(Twitter)</a>
+                
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/2044881377" class="item">bilibili</a>
+                
+                <a href="" class="item">WeChat</a>
+                
+                <a href="arronchin@outlook.com" class="item">Email</a>
+                
+            </div>
+            
+        </div>
+        <span>&copy; 2024 Tangbin<br>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> </span>
+        
+        <br>
+        <span class="footer-extra-description">Le vent se lève, il faut tenter de vivre.</span>
+        
+        
+            <br>
+            <div class="color-scheme-toggle" role="radiogroup" id="theme-color-scheme-toggle">
+                <label>
+                    <input type="radio" value="light">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark">
+                    <span>Dark</span>
+                </label>
+                <label>
+                    <input type="radio" value="auto">
+                    <span>Auto</span>
+                </label>
+            </div>
+        
+    </div>
+</footer>
+
+
+        
+<script src="/js/main.js"></script>
+
+        
+        
+        
+
+        
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script>
+            window.addEventListener('load', () => {
+                ScrollReveal({ delay: 250, reset: true, easing: 'cubic-bezier(0, 0, 0, 1)' })
+                ScrollReveal().reveal('.post-list-item .cover-img img')
+                ScrollReveal().reveal('.post-list-item, .card, .content p img, .content .block-large img', { distance: '60px', origin: 'bottom', duration: 800 })
+            })
+        </script>
+        
+    </body>
+</html>
