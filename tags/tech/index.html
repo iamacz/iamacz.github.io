@@ -93,11 +93,10 @@
   <link rel="stylesheet" href="/css/murmurs.css">
   <script src="/js/murmurs.js"></script>
 
-
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         const bodyElement = document.querySelector('body');
-
+    
         // Function to update the giscus theme
         const updateGiscusTheme = (theme) => {
             const iframe = document.querySelector('iframe.giscus-frame');
@@ -111,11 +110,11 @@
                 }, 'https://giscus.app');
             }
         };
-
+    
         // Initial update of giscus theme based on the current data-current-color-scheme
         const initialTheme = bodyElement.getAttribute('data-current-color-scheme');
         updateGiscusTheme(initialTheme);
-
+    
         // MutationObserver to monitor changes to the data-current-color-scheme attribute
         const observer = new MutationObserver((mutationsList) => {
             for (let mutation of mutationsList) {
@@ -125,12 +124,37 @@
                 }
             }
         });
-
+    
         // Observe changes to attributes of the body element
         observer.observe(bodyElement, { attributes: true });
-
-        });
-  </script> 
+    
+        // Function to handle the giscus iframe load event
+        const handleGiscusLoad = () => {
+            const theme = bodyElement.getAttribute('data-current-color-scheme');
+            updateGiscusTheme(theme);
+        };
+    
+        // Add an event listener to the giscus iframe load event
+        const addIframeLoadListener = () => {
+            const giscusIframe = document.querySelector('iframe.giscus-frame');
+            if (giscusIframe) {
+                giscusIframe.addEventListener('load', handleGiscusLoad);
+            }
+        };
+    
+        // Retry adding the load listener if the iframe is not yet loaded
+        const retryLoadListener = () => {
+            if (!document.querySelector('iframe.giscus-frame')) {
+                setTimeout(retryLoadListener, 500);
+            } else {
+                addIframeLoadListener();
+            }
+        };
+    
+        retryLoadListener();
+    
+    });
+    </script>
     
 
   
