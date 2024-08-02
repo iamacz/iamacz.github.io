@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>about - Tangbin Chen</title>
+  <title>Giscus - dynamic dark mode - Tangbin Chen</title>
   
     <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
   
@@ -16,13 +16,17 @@
   
   
   
-  <meta property="og:title" content="about - Tangbin Chen" />
+  <meta property="og:title" content="Giscus - dynamic dark mode - Tangbin Chen" />
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   
-  <meta property="og:url" content="http://example.com/about/index.html" />
+  <meta property="og:url" content="http://example.com/posts/2024/giscus-dynamic-dark-mode.html" />
   
-  <meta property="og:image" content="/img/self-portrait.jpg" />
+  <meta property="og:image" content="/img/GISCUS.png" />
+  
+  <meta property="og:article:published_time" content="2024-07-23T12:01:56.000Z" />
+  
+  <meta property="og:article:author" content="Tangbin" />
   
   
 
@@ -225,30 +229,48 @@
 <article class="post">
     <div class="meta">
         
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/tech/">tech</a>
+        
+        </div>
+        
 
         
         <div class="date" id="date">
             <span>July</span>
-            <span>24,</span>
+            <span>23,</span>
             <span>2024</span>
         </div>
         
 
-        <h1 class="title">about</h1>
+        <h1 class="title">Giscus - dynamic dark mode</h1>
     </div>
 
     <div class="divider"></div>
 
     <div class="content">
-        <h1 id="Tangbin"><a href="#Tangbin" class="headerlink" title="Tangbin?"></a>Tangbin?</h1><p>Hello! This is Tangbin Chen. I sometimes also go by Arron (a name I like but is not used much lately). </p>
-<p><img src="/img/By-the-black-sea.jpg" alt="|500"></p>
-<p>I was an engineering student who had always been interested in social questions. Very luckily, I got admitted to a master program in <a target="_blank" rel="noopener" href="https://liu.se/en/education/program/f7mcd">Computational Social Science</a> at Linköping University where I met a lot of interesting people and received my desired training. </p>
-<p>After my graduation in 2022, I decided to continue studying as a doctoral student and worked at the Institute for Analytical Sociology at Linköping University for another year as research asistant. After that, I was offered a PhD position at Karolinska Institutet to do social epidemiological research. I am very looking forward to my coming journey~</p>
-<p>My main interest is in social influence and network study. My doctoral research will focus on health-related behaviors, especially their diffusion through social networks and network-based intervention.</p>
-<h1 id="Hobbies"><a href="#Hobbies" class="headerlink" title="Hobbies?"></a>Hobbies?</h1><p>Every time being asked about my hobbies, I will be at a loss for a while. It is really hard to summarize what are my hobbies. I like music, movies, novel technologies, travelling, and handcrafts. I like peaceful tea time as well. I also like foods, I like cooking too. I also game sometimes, mainly Genshin Impact. There are so many things I like but I have never attempted to develop one as my hobby (Or maybe I can see it this way that all above are my hobbies). And now I am trying to start blogging as my (new) hobby🙈</p>
-<h1 id="About-this-blog…"><a href="#About-this-blog…" class="headerlink" title="About this blog…"></a>About this blog…</h1><p>First I would like to send many thanks to <a target="_blank" rel="noopener" href="https://github.com/MrWillCom">@MrWillCom (Mr. Will)</a> and <a target="_blank" rel="noopener" href="https://github.com/Siricee">@Siricee (Liu Zijian)</a> for their excellent templates. And also, I’d like to thank <a target="_blank" rel="noopener" href="https://github.com/DID321">@DID321 (Di Wang)</a> for his tutorial on blogging with <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a>.</p>
-<p>In this blog, I plan to post something about my life, my thoughts and most importantly to keep a record of my research and study.</p>
-<h1 id="Greetings"><a href="#Greetings" class="headerlink" title="Greetings~"></a>Greetings~</h1><p>Welcome to my blog!</p>
+        <p>I’ve been procrastinating for almost a week before I finally realize that I have this blog on my todo list. In this blog, I will show you how I make the theme of my Giscus <strong>dynamically change with the light/dark theme of my blog site</strong> (a front-end layman’s solution).</p>
+<p>As I mentioned in my previous post <a href="/posts/2024/how-i-built-my-blog.html">Born this way - how I built my blog</a>, you can adjust the settings of Gisgus on <a target="_blank" rel="noopener" href="https://giscus.app/">their website</a>.</p>
+<p><img src="/img/giscus-theme.png" alt=""> </p>
+<p><strong><mark style="background: #FFB86CA6;">NOTE</strong>&lt;/mark&gt;: Before we start, I assume that you already have your blog built in some ways using <strong>Hexo</strong>. <strong>If this is not the case</strong>, then this blog probably can not help you that much.</p>
+<h1 id="Body-element-of-light-dark-theme"><a href="#Body-element-of-light-dark-theme" class="headerlink" title="Body element of light/dark theme"></a>Body element of light/dark theme</h1><p>My solution is to fetch the body element that hold the value of current color theme (light or dark) and adjust the theme of Giscus according to the value.</p>
+<p>So step 1, we need to <strong><mark style="background: #ADCCFFA6;">find out what is the name of the specific body element</mark></strong>.</p>
+<p>First, right click on your blog folder, and click on “Open Git Bash here”. Then you need to starts a local server so that you can preview your blog, you can use the command below:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p> Then you can go to <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> for the preview.  When you open the page, press F12 to see the html code of the webpage. Now you can focus on the body elements, and <strong>switch your site from light to dark</strong>. Did you see the changes are highlighted by your browser already?<br>  <img src="inspect-my-page.png" alt=""></p>
+<p>You can see that here two elements of mine changed when I switch the theme:</p>
+<ul>
+<li>data-color-scheme</li>
+<li>data-current-color-scheme</li>
+</ul>
+<p>The former one holds the value of the theme value input from the toggle on my blog page - light, dark, auto. The latter is the element that holds the value of the current color theme. The difference is that the former can be “auto” when switching the theme, and it will be more complex for us to make a function that can understand “auto” than take the value of the latter element, which tells you precisely what theme is in use.</p>
+<p>You might find your correspond body element with very different name. <strong><mark style="background: #ADCCFFA6;">The core here is to find the one can can tell you what color theme your are using</mark></strong>.</p>
+<h1 id="Add-the-JavaScript-snippet-to-your-header"><a href="#Add-the-JavaScript-snippet-to-your-header" class="headerlink" title="Add the JavaScript snippet to your header"></a>Add the JavaScript snippet to your header</h1><p>Then add this script in your head, usually, you can find it in the folder: <code>your-blog/themes/your-theme/layout/_partial</code>. </p>
+<p>Remember that you need to replace the “data-current-color-scheme” in the code to the name of the body element that holds the value of the current theme.</p>
+<p>Then the automatic syncing should be working~</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;DOMContentLoaded&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> bodyElement = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;body&#x27;</span>);</span><br><span class="line">  </span><br><span class="line">        <span class="comment">// Function to update the giscus theme</span></span><br><span class="line">        <span class="keyword">const</span> <span class="title function_">updateGiscusTheme</span> = (<span class="params">theme</span>) =&gt; &#123;</span><br><span class="line">            <span class="keyword">const</span> iframe = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&#x27;iframe.giscus-frame&#x27;</span>);</span><br><span class="line">            <span class="keyword">if</span> (iframe) &#123;</span><br><span class="line">                iframe.<span class="property">contentWindow</span>.<span class="title function_">postMessage</span>(&#123;</span><br><span class="line">                    <span class="attr">giscus</span>: &#123;</span><br><span class="line">                        <span class="attr">setConfig</span>: &#123;</span><br><span class="line">                            <span class="attr">theme</span>: theme</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;, <span class="string">&#x27;https://giscus.app&#x27;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Initial update of giscus theme based on the current data-current-color-scheme</span></span><br><span class="line">        <span class="keyword">const</span> initialTheme = bodyElement.<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-current-color-scheme&#x27;</span>);</span><br><span class="line">        <span class="title function_">updateGiscusTheme</span>(initialTheme);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// MutationObserver to monitor changes to the data-current-color-scheme attribute</span></span><br><span class="line">        <span class="keyword">const</span> observer = <span class="keyword">new</span> <span class="title class_">MutationObserver</span>(<span class="function">(<span class="params">mutationsList</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> mutation <span class="keyword">of</span> mutationsList) &#123;</span><br><span class="line">                <span class="keyword">if</span> (mutation.<span class="property">type</span> === <span class="string">&#x27;attributes&#x27;</span> &amp;&amp; mutation.<span class="property">attributeName</span> === <span class="string">&#x27;data-current-color-scheme&#x27;</span>) &#123;</span><br><span class="line">                    <span class="keyword">const</span> newTheme = bodyElement.<span class="title function_">getAttribute</span>(<span class="string">&#x27;data-current-color-scheme&#x27;</span>);</span><br><span class="line">                    <span class="title function_">updateGiscusTheme</span>(newTheme);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Observe changes to attributes of the body element</span></span><br><span class="line">        observer.<span class="title function_">observe</span>(bodyElement, &#123; <span class="attr">attributes</span>: <span class="literal">true</span> &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>Enjoy the dynamic dark theme of your giscus now~</strong></p>
 
     </div>
     
@@ -335,14 +357,34 @@
             <p>This post is written by Tangbin, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
         </div>
         
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/tech/" class="tag">#tech</a><a href="/tags/record/" class="tag">#record</a><a href="/tags/experience/" class="tag">#experience</a><a href="/tags/blog/" class="tag">#blog</a>
+        </p>
+        
     </div>
     
 
     <div class="container post-prev-next">
         <a class="next"></a>
-        <a class="prev"></a>
+        
+        <a href="/posts/2024/how-i-built-my-blog" class="prev">
+            <div>
+                <div class="text">
+                    <p class="label">Previous</p>
+                    <h3 class="title">Born this way - how I built my blog</>
+                </div>
+            </div>
+        </a>
+        
     </div>
 
+    
+        
+        
+        <script src="https://giscus.app/client.js" data-repo="iamacz/iamacz.github.io" data-repo-id="R_kgDOMX21NQ" data-category="Announcements" data-category-id="DIC_kwDOMX21Nc4ChDNc" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="bottom" data-theme="preferred_color_scheme" data-lang="en" crossorigin="anonymous" async> </script>
+        
     
 </article>
 

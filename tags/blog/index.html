@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>Category: diary - Tangbin Chen</title>
+  <title>#blog - Tangbin Chen</title>
   
     <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
   
@@ -16,11 +16,11 @@
   
   
   
-  <meta property="og:title" content="Category: diary - Tangbin Chen" />
+  <meta property="og:title" content="#blog - Tangbin Chen" />
   
   <meta property="og:type" content="website" />
   
-  <meta property="og:url" content="http://example.com/categories/diary/index.html" />
+  <meta property="og:url" content="http://example.com/tags/blog/index.html" />
   
   <meta property="og:image" content="/img/self-portrait.jpg" />
   
@@ -90,7 +90,9 @@
   <link rel="stylesheet" href="/css/toc.css"> <!-- Your CSS file -->
   <script src="/js/tocbot.min.js"></script>
 
-  
+  <link rel="stylesheet" href="/css/murmurs.css">
+  <script src="/js/murmurs.js"></script>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -130,6 +132,47 @@
         });
   </script> 
     
+
+  
+
+  <!-- dynamic margin for toc and post content -->
+  <script>
+    window.addEventListener('resize', function() {
+      var post = document.querySelector('.post');
+      var postToc = document.querySelector('.post-toc');
+      var windowWidth = window.innerWidth;
+  
+      if (windowWidth < 800) {
+        postToc.style.display = 'none';
+        post.style.marginLeft = '0';
+        post.style.marginRight = '0';
+        post.style.width = '100%';
+      } else if (windowWidth < 900) {
+        postToc.style.display = 'block';
+        post.style.marginLeft = '0';
+        post.style.marginRight = '0';
+        post.style.width = 'calc(100% - 300px)';
+      } else if (windowWidth < 1200) {
+        postToc.style.display = 'block';
+        post.style.marginLeft = '5%';
+        post.style.marginRight = '25%';
+        post.style.width = 'auto';
+      } else if (windowWidth < 1600) {
+        postToc.style.display = 'block';
+        post.style.marginLeft = '10%';
+        post.style.marginRight = '30%';
+        post.style.width = 'auto';
+      } else {
+        postToc.style.display = 'block';
+        post.style.marginLeft = 'auto';
+        post.style.marginRight = 'auto';
+        post.style.width = 'auto';
+      }
+    });
+  
+    // Trigger resize event on page load
+    window.dispatchEvent(new Event('resize'));
+  </script>
 
   
 <!-- hexo injector head_end start -->
@@ -185,11 +228,11 @@
         <div class="container">
     <div class="meta">
         <div class="type">
-            Category
             
+            Tag
         </div>
 
-        <h2 class="title">diary</h2>
+        <h2 class="title">#blog</h2>
     </div>
 
     <div class="divider"></div>
@@ -197,22 +240,28 @@
     <div class="post-list archives">
         
         <article class="post-list-item">
-            <a href="/2024/07/19/Diary/Test%20diary/">
+            <a href="/posts/2024/giscus-dynamic-dark-mode">
                 
                 <div class="cover-img">
-                    <img src="/img/MoonAndTree.jpg" alt="Leaves and the moon">
+                    <img src="/img/GISCUS.png" alt="giscus">
                 </div>
                 
                 <div class="content">
                     
+                    <div class="categories text-uppercase">
+                    
+                        <span>tech</span>
+                    
+                    </div>
+                    
                     <div class="title">
-                        Test diary
+                        Giscus - dynamic dark mode
                     </div>
                     
                     
                     <div class="time">
                         <span>July</span>
-                        <span>&nbsp;19,&nbsp;</span>
+                        <span>&nbsp;23,&nbsp;</span>
                         <span>2024</span>
                     </div>
                     

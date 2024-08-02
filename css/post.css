@@ -4,30 +4,50 @@ body {
 
 .post {
   /* margin: 128px 0; */
-  margin-left: 100px; /* Closer to the left border */
-  margin-right: 156px; /* Farther from the right border */
+  margin-left: 150px; /* Closer to the left border */
+  margin-right: 300px; /* Farther from the right border */
   margin-top: 128px; /* Top margin */
   margin-bottom: 128px; /* Bottom margin */
 }
 
-/* Example of adding responsive adjustments */
-@media screen and (max-width: 1000px) {
+/* ------- trial below ---------- */
+@media (max-width: 1600px) {
   .post {
-    margin-left: 0px; /* Adjust margins for smaller screens if needed */
-    margin-right: 0px;
-    margin-top: 128px; /* Top margin */
-    margin-bottom: 128px; /* Bottom margin */
+    margin-left: calc(10%); /* Adjust this value as needed */
+    margin-right: calc(30%); /* Adjust this value as needed */
   }
 }
 
+@media (max-width: 1200px) {
+  .post {
+    margin-left: calc(5%); /* Adjust this value as needed */
+    margin-right: calc(25%); /* Adjust this value as needed */
+  }
+}
 
-/* hide toc when screen is small 1279px */
+@media (max-width: 900px) {
+  .post {
+    margin-right: 0;
+    width: calc(100% - 300px); /* Adjust this value based on the width of your TOC */
+  }
 
-@media screen and (max-width: 1279px) {
+  .post-toc {
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .post {
+    width: 100%;
+  }
+
   .post-toc {
     display: none;
   }
 }
+
+/* ------- trial above ---------- */
+
 
 .meta .categories {
   color: var(--link);

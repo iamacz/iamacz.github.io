@@ -90,7 +90,9 @@
   <link rel="stylesheet" href="/css/toc.css"> <!-- Your CSS file -->
   <script src="/js/tocbot.min.js"></script>
 
-  
+  <link rel="stylesheet" href="/css/murmurs.css">
+  <script src="/js/murmurs.js"></script>
+
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -130,6 +132,47 @@
         });
   </script> 
     
+
+  
+
+  <!-- dynamic margin for toc and post content -->
+  <script>
+    window.addEventListener('resize', function() {
+      var post = document.querySelector('.post');
+      var postToc = document.querySelector('.post-toc');
+      var windowWidth = window.innerWidth;
+  
+      if (windowWidth < 800) {
+        postToc.style.display = 'none';
+        post.style.marginLeft = '0';
+        post.style.marginRight = '0';
+        post.style.width = '100%';
+      } else if (windowWidth < 900) {
+        postToc.style.display = 'block';
+        post.style.marginLeft = '0';
+        post.style.marginRight = '0';
+        post.style.width = 'calc(100% - 300px)';
+      } else if (windowWidth < 1200) {
+        postToc.style.display = 'block';
+        post.style.marginLeft = '5%';
+        post.style.marginRight = '25%';
+        post.style.width = 'auto';
+      } else if (windowWidth < 1600) {
+        postToc.style.display = 'block';
+        post.style.marginLeft = '10%';
+        post.style.marginRight = '30%';
+        post.style.width = 'auto';
+      } else {
+        postToc.style.display = 'block';
+        post.style.marginLeft = 'auto';
+        post.style.marginRight = 'auto';
+        post.style.width = 'auto';
+      }
+    });
+  
+    // Trigger resize event on page load
+    window.dispatchEvent(new Event('resize'));
+  </script>
 
   
 <!-- hexo injector head_end start -->
@@ -197,7 +240,37 @@
     <div class="post-list archives">
         
         <article class="post-list-item">
-            <a href="/2024/07/22/Tech/Born%20this%20way%20-%20how%20I%20built%20my%20blog/">
+            <a href="/posts/2024/giscus-dynamic-dark-mode">
+                
+                <div class="cover-img">
+                    <img src="/img/GISCUS.png" alt="giscus">
+                </div>
+                
+                <div class="content">
+                    
+                    <div class="categories text-uppercase">
+                    
+                        <span>tech</span>
+                    
+                    </div>
+                    
+                    <div class="title">
+                        Giscus - dynamic dark mode
+                    </div>
+                    
+                    
+                    <div class="time">
+                        <span>July</span>
+                        <span>&nbsp;23,&nbsp;</span>
+                        <span>2024</span>
+                    </div>
+                    
+                </div>
+            </a>
+        </article>
+        
+        <article class="post-list-item">
+            <a href="/posts/2024/how-i-built-my-blog">
                 
                 <div class="cover-img">
                     <img src="/img/blog.png" alt="blog_by_DALLE">
