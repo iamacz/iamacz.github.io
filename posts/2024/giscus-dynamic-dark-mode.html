@@ -276,13 +276,13 @@
     <div class="content">
         <p>I’ve been procrastinating for almost a week before I finally realize that I have this blog on my todo list. In this blog, I will show you how I make the theme of my Giscus <strong>dynamically change with the light/dark theme of my blog site</strong> (a front-end layman’s solution).</p>
 <p>As I mentioned in my previous post <a href="/posts/2024/how-i-built-my-blog.html">Born this way - how I built my blog</a>, you can adjust the settings of Gisgus on <a target="_blank" rel="noopener" href="https://giscus.app/">their website</a>.</p>
-<p><img src="img/giscus-dynamic-dark-mode/giscus-theme.png" alt=""> </p>
+<p><img src="../../img/giscus-dynamic-dark-mode/giscus-theme.png" alt=""> </p>
 <p><strong><mark style="background: #FFB86CA6;">NOTE</mark></strong>: Before we start, I assume that you already have your blog built in some ways using <strong>Hexo</strong>. <strong>If this is not the case</strong>, then this blog probably can not help you that much.</p>
 <h1 id="Body-element-of-light-dark-theme"><a href="#Body-element-of-light-dark-theme" class="headerlink" title="Body element of light/dark theme"></a>Body element of light/dark theme</h1><p>My solution is to fetch the body element that hold the value of current color theme (light or dark) and adjust the theme of Giscus according to the value.</p>
 <p>So step 1, we need to <strong><mark style="background: #ADCCFFA6;">find out what is the name of the specific body element</mark></strong>.</p>
 <p>First, right click on your blog folder, and click on “Open Git Bash here”. Then you need to starts a local server so that you can preview your blog, you can use the command below:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p> Then you can go to <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> for the preview.  When you open the page, press F12 to see the html code of the webpage. Now you can focus on the body elements, and <strong>switch your site from light to dark</strong>. Did you see the changes are highlighted by your browser already?<br>  <img src="img/giscus-dynamic-dark-mode/inspect-my-page.png" alt=""></p>
+<p> Then you can go to <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> for the preview.  When you open the page, press F12 to see the html code of the webpage. Now you can focus on the body elements, and <strong>switch your site from light to dark</strong>. Did you see the changes are highlighted by your browser already?<br>  <img src="../../img/giscus-dynamic-dark-mode/inspect-my-page.png" alt=""></p>
 <p>You can see that here two elements of mine changed when I switch the theme:</p>
 <ul>
 <li>data-color-scheme</li>
