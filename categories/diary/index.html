@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>Search - Tangbin Chen</title>
+  <title>Category: diary - Tangbin Chen</title>
   
     <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
   
@@ -16,11 +16,11 @@
   
   
   
-  <meta property="og:title" content="Search - Tangbin Chen" />
+  <meta property="og:title" content="Category: diary - Tangbin Chen" />
   
   <meta property="og:type" content="website" />
   
-  <meta property="og:url" content="http://example.com/search/index.html" />
+  <meta property="og:url" content="http://example.com/categories/diary/index.html" />
   
   <meta property="og:image" content="/img/self-portrait.jpg" />
   
@@ -75,10 +75,6 @@
 <link rel="stylesheet" href="/css/archive.css">
 
   
-  
-  
-<link rel="stylesheet" href="/css/search.css">
-
   
   
   
@@ -223,8 +219,6 @@
         data-config-root="/"
         
         
-        data-search-path="search.json"
-        
     >
         <nav id="theme-nav">
     <div class="inner">
@@ -260,41 +254,48 @@
         </div>
     </div>
 </nav>
-        
-    <div class="container">
+        <div class="container">
     <div class="meta">
-        <h2 class="title">
-            Search
-        </h2>
+        <div class="type">
+            Category
+            
+        </div>
+
+        <h2 class="title">diary</h2>
     </div>
-    <form id="search-form">
-        <input type="text" id="searchbox" placeholder="Type to search...">
-    </form>
-    <div class="post-list archives" id="search-results"></div>
+
+    <div class="divider"></div>
+
+    <div class="post-list archives">
+        
+        <article class="post-list-item">
+            <a href="/posts/2024/test-diary">
+                
+                <div class="cover-img">
+                    <img src="/img/MoonAndTree.jpg" alt="Leaves and the moon">
+                </div>
+                
+                <div class="content">
+                    
+                    <div class="title">
+                        Test diary what the name will be?
+                    </div>
+                    
+                    
+                    <div class="time">
+                        <span>July</span>
+                        <span>&nbsp;19,&nbsp;</span>
+                        <span>2024</span>
+                    </div>
+                    
+                </div>
+            </a>
+        </article>
+        
+    </div>
+
+    
 </div>
-
-
-
-    
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-          processEscapes: true,
-          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-        }
-      });
-      MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-      });
-    </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-
-  
         <footer>
     <div class="inner">
         <div class="links">
@@ -369,10 +370,6 @@
 
         
 <script src="/js/main.js"></script>
-
-        
-        
-<script src="/js/search.js"></script>
 
         
         

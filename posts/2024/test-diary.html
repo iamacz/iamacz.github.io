@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
   
-  <title>Search - Tangbin Chen</title>
+  <title>Test diary what the name will be? - Tangbin Chen</title>
   
     <link rel="shortcut icon" href="/img/MyBlogIcon-bgrm.png">
   
@@ -16,13 +16,17 @@
   
   
   
-  <meta property="og:title" content="Search - Tangbin Chen" />
+  <meta property="og:title" content="Test diary what the name will be? - Tangbin Chen" />
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   
-  <meta property="og:url" content="http://example.com/search/index.html" />
+  <meta property="og:url" content="http://example.com/posts/2024/test-diary.html" />
   
-  <meta property="og:image" content="/img/self-portrait.jpg" />
+  <meta property="og:image" content="/img/MoonAndTree.jpg" />
+  
+  <meta property="og:article:published_time" content="2024-07-19T03:41:24.000Z" />
+  
+  <meta property="og:article:author" content="Tangbin" />
   
   
 
@@ -71,14 +75,6 @@
 
   
   
-  
-<link rel="stylesheet" href="/css/archive.css">
-
-  
-  
-  
-<link rel="stylesheet" href="/css/search.css">
-
   
   
   
@@ -223,8 +219,6 @@
         data-config-root="/"
         
         
-        data-search-path="search.json"
-        
     >
         <nav id="theme-nav">
     <div class="inner">
@@ -261,17 +255,155 @@
     </div>
 </nav>
         
-    <div class="container">
+<article class="post">
     <div class="meta">
-        <h2 class="title">
-            Search
-        </h2>
+        
+        <div class="categories text-uppercase">
+        
+            <a href="/categories/diary/">diary</a>
+        
+        </div>
+        
+
+        
+        <div class="date" id="date">
+            <span>July</span>
+            <span>19,</span>
+            <span>2024</span>
+        </div>
+        
+
+        <h1 class="title">Test diary what the name will be?</h1>
     </div>
-    <form id="search-form">
-        <input type="text" id="searchbox" placeholder="Type to search...">
-    </form>
-    <div class="post-list archives" id="search-results"></div>
+
+    <div class="divider"></div>
+
+    <div class="content">
+        <h1 id="絮叨"><a href="#絮叨" class="headerlink" title="絮叨"></a>絮叨</h1><p>只要有一天晚睡了，好像就会一连好几天都没办法好好睡觉。</p>
+<p>不过还是要好好睡觉啦！Recovery is the key!</p>
+<h1 id="Mathjax"><a href="#Mathjax" class="headerlink" title="Mathjax"></a>Mathjax</h1><p>试了试mathjax，但是根据MrWillCom的教程，我的公式还是无法显示，所以就稍微搜索了一下教程，看到了很有用的教程：<a target="_blank" rel="noopener" href="https://pku-zyf.github.io/formula/">Hexo渲染数学公式：配置方法与原理浅释</a></p>
+<p>下面测试公式的现实：</p>
+<script type="math/tex; mode=display">
+\frac{1}{x^2-1}</script><p>顺便试试看inline $e=mc^2$</p>
+<p>效果不错~</p>
+<h1 id="Giscus"><a href="#Giscus" class="headerlink" title="Giscus"></a>Giscus</h1><p>Github page 有趣的东西真的挺多的，下一步就去配置一个评论区叭！🤩</p>
+<p>感谢这个教程：<a target="_blank" rel="noopener" href="https://www.lixueduan.com/posts/blog/02-add-giscus-comment/">Hugo 博客引入 Giscus 评论系统</a></p>
+<h1 id="Hexo-OB-Git"><a href="#Hexo-OB-Git" class="headerlink" title="Hexo + OB + Git"></a>Hexo + OB + Git</h1><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7120189614660255781">Hexo + Obsidian + Git 完美的博客部署与编辑方案 - 掘金 (juejin.cn)</a> 拜读拜读这个完美的教程~</p>
+<h1 id="Vercel"><a href="#Vercel" class="headerlink" title="Vercel?"></a>Vercel?</h1><p><a target="_blank" rel="noopener" href="https://sspai.com/post/63028">Vercel ，开箱即用的网站管理小工具 - 少数派 (sspai.com)</a></p>
+<h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>I’ve been procrastinating for almost a week before I finally realize that I have this blog on my todo list. In this blog, I will show you how I make the theme of my Giscus <strong>dynamically change with the light/dark theme of my blog site</strong> (a front-end layman’s solution).</p>
+<p><img src="../../img/Test%20diary/giscus-theme.png" alt="|200"></p>
+<p><img src="../../img/Test%20diary/Pasted%20image%2020240803174909.png" alt="Beautiful code|500"></p>
+
+    </div>
+    
+    <!-- fom chic test  -->
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
 </div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    // document.ready(function() {
+    //     tocbot.init(obj_merge(tocbot_default_config, {
+    //         collapseDepth: 1
+    //     }));
+    // });
+
+    document.addEventListener('DOMContentLoaded', function() {
+            tocbot.init(obj_merge(tocbot_default_config, {
+                collapseDepth: 1
+            }));
+        });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+    <!-- from chic -->
+     
+    
+    <div class="about">
+        <h1>About this Post</h1>
+        <div class="details">
+            <p>This post is written by Tangbin, licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0">CC BY-NC 4.0</a>.</p>
+        </div>
+        
+        <p class="tags">
+            
+            <i class="icon"></i>
+            <a href="/tags/life/" class="tag">#life</a>
+        </p>
+        
+    </div>
+    
+
+    <div class="container post-prev-next">
+        
+        <a href="/posts/2024/how-i-built-my-blog" class="next">
+            <div>
+                <div class="text">
+                    <p class="label">Next</p>
+                    <h3 class="title">Born this way - how I built my blog</h3>
+                </div>
+            </div>
+        </a>
+        
+        <a class="prev"></a>
+    </div>
+
+    
+</article>
 
 
 
@@ -369,10 +501,6 @@
 
         
 <script src="/js/main.js"></script>
-
-        
-        
-<script src="/js/search.js"></script>
 
         
         

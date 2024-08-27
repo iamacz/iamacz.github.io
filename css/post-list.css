@@ -1,16 +1,12 @@
 .post-list {
   user-select: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px; /* Adjust to your liking */
   max-width: 980px;
   margin: auto;
-}
-
-@media screen and (max-width: 600px) {
-  .post-list {
-    display: block;
-    max-width: 366px;
-  }
+  transition: all 0.5s ease; /* Transition for layout changes */
 }
 
 .post-list-item {
@@ -18,21 +14,41 @@
   border-radius: 16px;
   background-color: var(--card-bg);
   margin-bottom: 21px;
-  transition: all 200ms ease;
+  /* transition: all 100ms ease; */
+  transition: transform 0.5s ease, margin 0.5s ease; /* Animating transform and margin */
 }
 
-.post-list-item:nth-child(2n-1) {
+/* @media screen and (max-width: 600px) {
+  .post-list {
+    display: block;
+    max-width: 366px;
+  }
+} */
+
+/* .post-list-item:nth-child(2n-1) {
   margin-right: 8px;
 }
 
 .post-list-item:nth-child(2n) {
   margin-left: 8px;
-}
+} */
 
 @media screen and (max-width: 600px) {
   .post-list-item:nth-child(n) {
     margin-left: 0;
     margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .post-list {
+    grid-template-columns: 1fr 1fr; /* 2 columns for screen widths 600px to 900px */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post-list {
+    grid-template-columns: 1fr; 
   }
 }
 
